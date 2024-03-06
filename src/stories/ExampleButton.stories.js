@@ -1,5 +1,6 @@
 import ExampleButton from "../components/ExampleButton/ExampleButton";
 
+/**A versatile button for destuctive and confirming actions */
 export default {
     title: "Examples/Button",
     component: ExampleButton,
@@ -7,6 +8,7 @@ export default {
     tags: ['autodocs'],
 }
 
+/**Used for destruction */
 export const Red = {
     args: {
         backgroundColor: 'red',
@@ -15,6 +17,7 @@ export const Red = {
     },
 };
 
+/**Used for confirmation */
 export const Green = {
     args: {
         backgroundColor: 'green',

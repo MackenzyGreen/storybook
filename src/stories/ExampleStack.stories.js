@@ -6,9 +6,12 @@ export default {
   argTypes: {
     numberOfChildren: { type: "number" },
   },
+  args: {
+    numberOfChildren: 4,
+  }
 }
 
-const Template = ({ numberOfChildren = 4, ...args }) => (
+const Template = ({ numberOfChildren, ...args }) => (
   <ExampleStack {...args}>
     {[...Array(numberOfChildren).keys()].map(n => (
       <div
@@ -32,5 +35,30 @@ Horizontal.args = {
   direction: "row",
   spacing: 2,
   wrap: false,
-  numberOfChildren: 4
+}
+
+export const Vertical = {
+  render: ({ numberOfChildren, ...args }) => (
+    <ExampleStack {...args}>
+      {[...Array(numberOfChildren).keys()].map(n => (
+        <div
+          style={{
+            width: "50px",
+            height: "50px",
+            backgroundColor: "red",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          {n + 1}
+        </div>
+      ))}
+    </ExampleStack>
+  ),
+  args: {
+    direction: "column",
+    spacing: 2,
+    wrap: false,
+  }
 }
