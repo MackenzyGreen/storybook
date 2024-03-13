@@ -9,13 +9,13 @@ export const Lozenge = ({type, value}) => {
     let icon = "";
     switch(type) {
         case "time":
-            icon = <FiClock size={19} />;
+            icon = <FiClock size={16} />;
             break;
         case "prep":
-            icon = <PiKnifeFill size={19} />;
+            icon = <PiKnifeFill size={16} />;
             break;
         case "protein":
-            icon = <GiMeat size={20} />;
+            icon = <GiMeat size={17} />;
             break;
         default:
             icon = "";

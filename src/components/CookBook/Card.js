@@ -1,20 +1,27 @@
 import React from 'react';
 import Lozenge from './Lozenge';
 import PropTypes from 'prop-types';
+import './Card.css';
+import { PiDotOutlineFill } from 'react-icons/pi';
 
 function Card({title="Filler text for now", ingredientsList = [], quickInfo = []}) {
   return (
     <div className='card-container'>
-        <div className='card-header'>
+      <span>
+        <h2 className='card-header'>
             {title}
-        </div>
+        </h2>
         <div className='quick-info'>
-            {quickInfo.map((info) => (
-                <Lozenge type={info.type} value={info.value} />
+            {quickInfo.map((info, i) => (
+                <>
+                  <Lozenge type={info.type} value={info.value} />
+                  {i+1 !== quickInfo.length ? <PiDotOutlineFill size={19}/> : ''}
+                </>
             ))}
         </div>
+        </span>
         <div className='ingred-list'>
-            {ingredientsList.join(", ")}
+            <b>Ingredients: </b><span className='ingreds'>{ingredientsList.join(", ")}</span>
         </div>
     </div>
   )
